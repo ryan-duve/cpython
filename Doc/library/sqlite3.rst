@@ -805,8 +805,6 @@ Connection objects
 
    .. method:: create_aggregate(name, n_arg, aggregate_class)
 
-      :rtype: None
-
       Create or remove a user-defined SQL aggregate function.
 
       :param str name:
@@ -827,6 +825,9 @@ Connection objects
           is controlled by *n_arg*.
 
           Set to ``None`` to remove an existing SQL aggregate function.
+
+      :rtype: None
+
       :type aggregate_class: :term:`class` | None
 
       Example:
@@ -866,8 +867,6 @@ Connection objects
 
    .. method:: create_window_function(name, num_params, aggregate_class, /)
 
-      :rtype: None
-
       Create or remove a user-defined aggregate window function.
 
       :param str name:
@@ -894,6 +893,8 @@ Connection objects
       :raises NotSupportedError:
           If used with a version of SQLite older than 3.25.0,
           which does not support aggregate window functions.
+
+      :rtype: None
 
       :type aggregate_class: :term:`class` | None
 
@@ -1158,8 +1159,6 @@ Connection objects
 
    .. method:: load_extension(path, /, *, entrypoint=None)
 
-      :rtype: None
-
       Load an SQLite extension from a shared library.
       Enable extension loading with :meth:`enable_load_extension` before
       calling this method.
@@ -1174,6 +1173,8 @@ Connection objects
          If ``None`` (the default),
          SQLite will come up with an entry point name of its own;
          see the SQLite docs `Loading an Extension`_ for details.
+
+      :rtype: None
 
       :type entrypoint: str | None
 
@@ -1218,8 +1219,6 @@ Connection objects
 
       Create a backup of an SQLite database.
 
-      :rtype: None
-
       Works even if the database is being accessed by other clients
       or concurrently by the same connection.
 
@@ -1251,6 +1250,8 @@ Connection objects
       :param float sleep:
           The number of seconds to sleep between successive attempts
           to back up remaining pages.
+
+      :rtype: None
 
       Example 1, copy an existing database into another:
 
@@ -1370,6 +1371,8 @@ Connection objects
       :param bool enable:
          ``True`` if the configuration option should be enabled (default);
          ``False`` if it should be disabled.
+
+      :rtype: bool
 
       .. versionadded:: 3.12
 
